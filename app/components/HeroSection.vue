@@ -31,22 +31,7 @@
 
       <div class="hero-visual animate-fade-in" style="animation-delay: 0.2s">
         <div class="mockup-container">
-          <div class="mockup-screen">
-            <div class="mockup-header">
-              <div class="mockup-title">League Leaderboard</div>
-            </div>
-            <div class="mockup-content">
-              <div v-for="i in 5" :key="i" class="mockup-item">
-                <div class="mockup-rank">{{ i }}</div>
-                <div class="mockup-info">
-                  <div class="mockup-name">Team {{ ['Warriors', 'Titans', 'Eagles', 'Wolves', 'Stars'][i-1] }}</div>
-                  <div class="mockup-points">{{ 25 - i * 3 }} pts</div>
-                </div>
-                <TrendingUp v-if="i % 2 === 0" :size="14" color="var(--success-color)" />
-                <TrendingDown v-else :size="14" color="var(--error-color)" />
-              </div>
-            </div>
-          </div>
+          <img src="/hero-mockup.png" alt="Trofy App Mockup" class="hero-image" />
           <div class="mockup-glow"></div>
         </div>
       </div>
@@ -55,7 +40,7 @@
 </template>
 
 <script setup>
-import { Play, TrendingUp, TrendingDown } from 'lucide-vue-next'
+import { Play } from 'lucide-vue-next'
 </script>
 
 <style scoped>
@@ -99,8 +84,8 @@ import { Play, TrendingUp, TrendingDown } from 'lucide-vue-next'
   display: inline-block;
   padding: 6px 16px;
   border-radius: 20px;
-  background: rgba(124, 92, 252, 0.1);
-  border: 1px solid rgba(124, 92, 252, 0.2);
+  background: rgba(0, 245, 255, 0.1);
+  border: 1px solid rgba(0, 245, 255, 0.2);
   color: var(--primary-color);
   font-size: 13px;
   font-weight: 600;
@@ -127,11 +112,6 @@ h1 {
   display: flex;
   gap: 16px;
   margin-bottom: 60px;
-}
-
-.hero-actions .icon {
-  margin-right: 8px;
-  font-size: 12px;
 }
 
 .hero-stats {
@@ -163,74 +143,20 @@ h1 {
   background: var(--border-color);
 }
 
-/* Mockup */
 .mockup-container {
   position: relative;
-  width: 320px;
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
-.mockup-screen {
-  background: var(--surface-color);
-  border: 8px solid #1a1a24;
-  border-radius: 40px;
-  height: 560px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+.hero-image {
+  width: 100%;
+  height: auto;
   position: relative;
   z-index: 1;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
-
-.mockup-header {
-  padding: 40px 20px 20px;
-  background: linear-gradient(to bottom, rgba(124, 92, 252, 0.1), transparent);
-}
-
-.mockup-title {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.mockup-content {
-  padding: 0 20px;
-}
-
-.mockup-item {
-  display: flex;
-  align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.mockup-rank {
-  width: 24px;
-  font-weight: 700;
-  color: var(--text-secondary);
-}
-
-.mockup-info {
-  flex: 1;
-}
-
-.mockup-name {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.mockup-points {
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-.mockup-trend {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.mockup-trend.up { background: #10b981; }
-.mockup-trend.down { background: #ef4444; }
 
 .mockup-glow {
   position: absolute;

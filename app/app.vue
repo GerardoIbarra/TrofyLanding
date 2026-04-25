@@ -4,7 +4,11 @@
     
     <main>
       <HeroSection />
+      <ProcessSection />
       <FeaturesSection />
+      <TestimonialsSection />
+      <PricingSection />
+      <FaqSection />
       <CtaBanner />
     </main>
 

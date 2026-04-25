@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "landing-page-design": {
+      "source": "infsh-skills/skills",
+      "sourceType": "github",
+      "computedHash": "d9194d6a3cd823ed41ebb3647294837aa8952106693b90aa5d7af0a019cce922"
+    },
     "nuxt-ui": {
       "source": "nuxt/ui",
       "sourceType": "github",
