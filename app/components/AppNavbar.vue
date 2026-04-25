@@ -72,7 +72,7 @@ onUnmounted(() => {
 
 .navbar.scrolled {
   height: 70px;
-  background: rgba(5, 5, 8, 0.85);
+  background: rgba(3, 3, 3, 0.9);
   border-bottom-color: var(--border-color);
 }
 

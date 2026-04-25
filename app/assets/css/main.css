@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #0A192F;
-  --surface-color: #112240;
-  --border-color: #233554;
+  --bg-color: #050505;
+  --surface-color: #121212;
+  --border-color: #222222;
   --text-primary: #FFFFFF;
-  --text-secondary: #8892B0;
+  --text-secondary: #94a3b8;
   --primary-color: #00F5FF;
-  --primary-glow: rgba(0, 245, 255, 0.2);
+  --primary-glow: rgba(0, 245, 255, 0.15);
   --accent-color: #64FFDA;
   --gradient-primary: linear-gradient(135deg, #00F5FF 0%, #64FFDA 100%);
   --nav-height: 80px;
@@ -103,7 +103,7 @@ ul {
 }
 
 .glass {
-  background: rgba(15, 15, 22, 0.7);
+  background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
 }
