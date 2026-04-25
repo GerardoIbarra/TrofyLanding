@@ -15,6 +15,9 @@ export default defineNuxtConfig({
       title: 'Trofy - Ultimate Sports Tournament Management',
       meta: [
         { name: 'description', content: 'Organize, track, and manage sports leagues and tournaments with Trofy. The premium platform for competitive sports.' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
     }
   }
