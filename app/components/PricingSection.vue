@@ -6,9 +6,16 @@
         <p class="section-sub">Choose the plan that fits your league size. No hidden fees.</p>
       </div>
 
-      <div class="pricing-grid">
-        <div v-for="(plan, i) in plans" :key="i" class="pricing-card animate-on-scroll" :class="{ 'featured': plan.featured }" :style="`animation-delay: ${i * 0.1}s`">
-          <div v-if="plan.featured" class="popular-badge">Most Popular</div>
+      <div class="pricing-grid" @mouseleave="activeIndex = 1">
+        <div 
+          v-for="(plan, i) in plans" 
+          :key="i" 
+          class="pricing-card animate-on-scroll" 
+          :class="{ 'active': activeIndex === i }" 
+          :style="`animation-delay: ${i * 0.1}s`"
+          @mouseenter="activeIndex = i"
+        >
+          <div v-if="i === 1" class="popular-badge">Most Popular</div>
           <div class="plan-header">
             <h3>{{ plan.name }}</h3>
             <div class="price">
@@ -26,7 +33,7 @@
             </li>
           </ul>
 
-          <button class="btn" :class="plan.featured ? 'btn-primary' : 'btn-outline'">
+          <button class="btn" :class="activeIndex === i ? 'btn-primary' : 'btn-outline'">
             {{ plan.cta }}
           </button>
         </div>
@@ -36,7 +43,10 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { Check } from 'lucide-vue-next'
+
+const activeIndex = ref(1) // Pro is active by default
 
 const plans = [
   {
@@ -64,7 +74,7 @@ const plans = [
       'Priority support'
     ],
     cta: 'Get Started Pro',
-    featured: true
+    featured: false
   },
   {
     name: 'Enterprise',
@@ -102,13 +112,15 @@ const plans = [
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pricing-card.featured {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 40px rgba(0, 245, 255, 0.1);
+.pricing-card.active {
   transform: scale(1.05);
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.1);
+  z-index: 2;
 }
 
 .popular-badge {

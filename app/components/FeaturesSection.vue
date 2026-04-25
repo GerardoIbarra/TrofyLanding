@@ -66,7 +66,7 @@ const features = [
 <style scoped>
 .features {
   padding: 100px 0;
-  background: linear-gradient(to bottom, transparent, rgba(124, 92, 252, 0.03), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(0, 245, 255, 0.02), transparent);
 }
 
 .section-header {
@@ -109,15 +109,16 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(124, 92, 252, 0.1) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05) 0%, transparent 50%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(124, 92, 252, 0.3);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border-color: rgba(0, 245, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .feature-card:hover::before {
