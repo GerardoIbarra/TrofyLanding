@@ -1,0 +1,102 @@
+<template>
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass animate-on-scroll">
+        <div class="cta-content">
+          <h2>Ready to host your <br/><span class="text-gradient">best tournament yet?</span></h2>
+          <p>Join thousands of organizers who trust Trofy to power their competitive communities.</p>
+          <div class="cta-buttons">
+            <button class="btn btn-primary">Get Started Now</button>
+            <button class="btn btn-outline">Contact Sales</button>
+          </div>
+        </div>
+        <div class="cta-decoration">
+          <div class="trophy-glow">
+            <Trophy :size="120" color="var(--primary-color)" stroke-width="1.5" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import { Trophy } from 'lucide-vue-next'
+</script>
+
+<style scoped>
+.cta-section {
+  padding: 100px 0;
+}
+
+.cta-card {
+  padding: 80px 60px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cta-content {
+  flex: 1;
+  z-index: 1;
+}
+
+h2 {
+  font-size: clamp(32px, 5vw, 42px);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.cta-decoration {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trophy-glow {
+  font-size: 120px;
+  filter: drop-shadow(0 0 30px var(--primary-glow));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@media (max-width: 992px) {
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 40px;
+  }
+  
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+</style>
