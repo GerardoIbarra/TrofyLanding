@@ -1,24 +1,12 @@
 <template>
-  <section class="testimonials">
+  <section id="testimonials" class="testimonials">
     <div class="container">
       <div class="section-header text-center">
         <h2 class="animate-on-scroll">Trusted by <span class="text-gradient">Champions</span></h2>
-        <p class="section-sub">Join thousands of organizers who have upgraded their league management with Trofy.</p>
+        <p class="section-sub">Hear from the organizers and players who have transformed their tournaments with Trofy.</p>
       </div>
 
-      <div class="testimonials-grid">
-        <div v-for="(t, i) in testimonials" :key="i" class="testimonial-card animate-on-scroll" :style="`animation-delay: ${i * 0.1}s`">
-          <div class="quote-icon">"</div>
-          <p class="quote-text">{{ t.quote }}</p>
-          <div class="user-info">
-            <div class="avatar">{{ t.name.charAt(0) }}</div>
-            <div>
-              <div class="name">{{ t.name }}</div>
-              <div class="role">{{ t.role }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AnimatedTestimonials :testimonials="testimonials" :autoplay="true" />
     </div>
   </section>
 </template>
@@ -26,89 +14,39 @@
 <script setup>
 const testimonials = [
   {
-    name: 'Carlos Rodriguez',
-    role: 'League Director, MX Soccer',
-    quote: 'Trofy saved us at least 10 hours a week in administrative work. The automatic standings are a game changer.'
+    quote: "Trofy cut our administrative work by 70%. Generating the season schedule used to take days, now it takes seconds.",
+    name: "Alex Rivera",
+    designation: "Director @ Liga Premier CDMX",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=3000&auto=format&fit=crop",
   },
   {
-    name: 'Sarah Chen',
-    role: 'Tournament MVP',
-    quote: 'Being able to see my stats and upcoming matches in real-time makes the competition feel much more professional.'
+    quote: "The live standings feature is a game changer. Players love seeing their stats update instantly after every match.",
+    name: "Sarah Jenkins",
+    designation: "Tournament Lead @ Metro Soccer",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3387&auto=format&fit=crop",
   },
   {
-    name: 'Mike Thompson',
-    role: 'Regional Coordinator',
-    quote: 'The payment integration is seamless. We no longer have to chase captains for registration fees.'
+    quote: "Professionalism at its peak. The digital match sheets made our league look 10x more organized to sponsors.",
+    name: "Marco Silva",
+    designation: "Founder @ Elite Basketball League",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=3540&auto=format&fit=crop",
+  },
+  {
+    quote: "Best investment for our academy. Managing 50+ teams across multiple age groups is finally manageable.",
+    name: "Luis Hernandez",
+    designation: "Head Coach @ Rayados Academy",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=3387&auto=format&fit=crop",
   }
-]
+];
 </script>
 
 <style scoped>
 .testimonials {
   padding: 100px 0;
-  background: rgba(0, 245, 255, 0.01);
+  overflow: hidden;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 60px;
-}
-
-.testimonial-card {
-  background: var(--surface-color);
-  padding: 40px;
-  border-radius: 24px;
-  border: 1px solid var(--border-color);
-  position: relative;
-}
-
-.quote-icon {
-  font-size: 60px;
-  font-family: 'serif';
-  color: var(--primary-color);
-  opacity: 0.2;
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  line-height: 1;
-}
-
-.quote-text {
-  position: relative;
-  z-index: 1;
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  color: var(--text-primary);
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.avatar {
-  width: 48px;
-  height: 48px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #0A192F;
-}
-
-.name {
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.role {
-  font-size: 13px;
-  color: var(--text-secondary);
+.section-header {
+  margin-bottom: 40px;
 }
 </style>
