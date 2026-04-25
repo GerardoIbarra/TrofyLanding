@@ -12,7 +12,7 @@
         </div>
         <div class="cta-decoration">
           <div class="trophy-glow">
-            <Trophy :size="120" color="var(--primary-color)" stroke-width="1.5" />
+            <AppLogo :width="150" :height="150" color="var(--primary-color)" />
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { Trophy } from 'lucide-vue-next'
+// AppLogo is auto-imported
 </script>
 
 <style scoped>

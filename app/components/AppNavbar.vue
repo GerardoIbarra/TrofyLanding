@@ -2,7 +2,7 @@
   <nav class="navbar glass" :class="{ 'scrolled': isScrolled }">
     <div class="container nav-content">
       <div class="logo">
-        <Trophy class="logo-icon" :size="24" color="var(--primary-color)" />
+        <AppLogo :width="40" :height="40" color="var(--primary-color)" />
         <span class="logo-text">TROFY</span>
       </div>
       
@@ -38,7 +38,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { Trophy, Menu, X } from 'lucide-vue-next'
+import { Menu, X } from 'lucide-vue-next'
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)

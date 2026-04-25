@@ -24,10 +24,10 @@ import {
   BarChart3, 
   Calendar, 
   Smartphone, 
-  Trophy, 
   Users, 
   LineChart 
 } from 'lucide-vue-next'
+import AppLogo from './AppLogo.vue'
 
 const features = [
   {
@@ -46,7 +46,7 @@ const features = [
     desc: 'Update scores from the field. Players and fans get instant notifications on their devices.'
   },
   {
-    icon: Trophy,
+    icon: AppLogo,
     title: 'Tournament Formats',
     desc: 'Knockouts, Round Robins, Group Stages, or Custom Brackets. We support every competitive style.'
   },

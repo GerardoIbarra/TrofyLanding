@@ -3,7 +3,7 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <div class="logo">
-          <Trophy class="logo-icon" :size="24" color="var(--primary-color)" />
+          <AppLogo :width="36" :height="36" color="var(--primary-color)" />
           <span class="logo-text">TROFY</span>
         </div>
         <p class="brand-desc">Building the future of competitive sports management. Based in Mexico, serving the world.</p>
@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { Trophy, Twitter, Instagram, Linkedin } from 'lucide-vue-next'
+import { Twitter, Instagram, Linkedin } from 'lucide-vue-next'
 </script>
 
 <style scoped>
