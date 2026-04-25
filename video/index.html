@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trofy Product Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: #050505;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      width: 1920px;
+      height: 1080px;
+    }
+
+    [data-composition-id="trofy-demo"] {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      background: #050505;
+    }
+
+    .scene {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px;
+      box-sizing: border-box;
+      opacity: 0; /* Managed by timeline */
+    }
+
+    h1, h2 {
+      font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin: 0;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #00F5FF 0%, #64FFDA 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Scene 1: Intro */
+    #s1-logo { font-size: 200px; margin-bottom: 20px; }
+    #s1-title { font-size: 120px; font-weight: 800; }
+
+    /* Scene 2: Problem */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px);
+      background-size: 100px 100px;
+      opacity: 0.3;
+    }
+    #s2-heading { font-size: 80px; color: #94a3b8; }
+    .spreadsheet-box {
+      background: #111;
+      border: 1px solid #333;
+      padding: 20px;
+      font-family: monospace;
+      font-size: 24px;
+      color: #555;
+      margin-top: 40px;
+    }
+
+    /* Scene 3: Solution */
+    #s3-heading { font-size: 90px; }
+    .dashboard-preview {
+      width: 1200px;
+      height: 600px;
+      background: #121212;
+      border: 2px solid #00F5FF;
+      border-radius: 20px;
+      margin-top: 50px;
+      box-shadow: 0 0 100px rgba(0, 245, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    /* Scene 4: CTA */
+    #s4-title { font-size: 110px; margin-bottom: 40px; text-align: center; }
+    .btn-mockup {
+      background: linear-gradient(135deg, #00F5FF 0%, #64FFDA 100%);
+      color: #050505;
+      padding: 30px 80px;
+      border-radius: 20px;
+      font-size: 48px;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div data-composition-id="trofy-demo" data-width="1920" data-height="1080" data-duration="17">
+    
+    <!-- Scene 1: Welcome (0-4s) -->
+    <div id="scene1" class="scene" data-start="0" data-duration="4" data-track-index="1">
+      <div id="s1-logo">🏆</div>
+      <h1 id="s1-title">TROFY</h1>
+      <p style="font-size: 40px; color: #94a3b8; margin-top: 20px;">Manage like a Pro.</p>
+    </div>
+
+    <!-- Scene 2: Problem (4-8s) -->
+    <div id="scene2" class="scene" data-start="4" data-duration="4" data-track-index="1">
+      <div class="grid-bg"></div>
+      <h2 id="s2-heading">Still using spreadsheets?</h2>
+      <div class="spreadsheet-box">
+        [Error: Collision at Match 42]<br/>
+        [Warning: Duplicate Player ID]<br/>
+        [Loading... 89%]
+      </div>
+      <div id="s2-cross" style="position: absolute; font-size: 500px; color: #EF4444; opacity: 0;">✕</div>
+    </div>
+
+    <!-- Scene 3: Solution (8-13s) -->
+    <div id="scene3" class="scene" data-start="8" data-duration="5" data-track-index="1">
+      <h2 id="s3-heading">Step into the <span class="text-gradient">Future</span></h2>
+      <div class="dashboard-preview">
+        LIVE STANDINGS UPDATED
+      </div>
+    </div>
+
+    <!-- Scene 4: CTA (13-17s) -->
+    <div id="scene4" class="scene" data-start="13" data-duration="4" data-track-index="1">
+      <h1 id="s4-title">Ready to Kickoff?</h1>
+      <div class="btn-mockup">JOIN TROFY NOW</div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Scene 1 Animations
+      tl.to("#scene1", { opacity: 1, duration: 0.1 }, 0);
+      tl.from("#s1-logo", { scale: 0, rotation: -45, duration: 1.2, ease: "elastic.out(1, 0.5)" }, 0.2);
+      tl.from("#s1-title", { y: 100, opacity: 0, duration: 0.8, ease: "power3.out" }, 0.5);
+      tl.to("#scene1", { opacity: 0, duration: 0.5 }, 3.5);
+
+      // Scene 2 Animations
+      tl.to("#scene2", { opacity: 1, duration: 0.1 }, 4);
+      tl.from("#s2-heading", { x: -100, opacity: 0, duration: 0.8 }, 4.2);
+      tl.from(".spreadsheet-box", { scale: 0.9, opacity: 0, duration: 0.5 }, 4.5);
+      tl.to("#s2-cross", { opacity: 1, scale: 1.2, duration: 0.4, ease: "bounce.out" }, 6);
+      tl.to("#scene2", { opacity: 0, duration: 0.5 }, 7.5);
+
+      // Scene 3 Animations
+      tl.to("#scene3", { opacity: 1, duration: 0.1 }, 8);
+      tl.from("#s3-heading", { y: -50, opacity: 0, duration: 1, ease: "expo.out" }, 8.2);
+      tl.from(".dashboard-preview", { scale: 0.8, opacity: 0, rotationX: 20, duration: 1.2, ease: "power4.out" }, 8.5);
+      tl.to("#scene3", { opacity: 0, duration: 0.5 }, 12.5);
+
+      // Scene 4 Animations
+      tl.to("#scene4", { opacity: 1, duration: 0.1 }, 13);
+      tl.from("#s4-title", { scale: 0.5, opacity: 0, duration: 0.8, ease: "back.out(1.7)" }, 13.2);
+      tl.from(".btn-mockup", { y: 50, opacity: 0, duration: 0.6, ease: "power2.out" }, 13.5);
+      tl.to(".btn-mockup", { scale: 1.1, repeat: 2, yoyo: true, duration: 0.4 }, 14.5);
+
+      window.__timelines["trofy-demo"] = tl;
+    </script>
+  </div>
+</body>
+</html>

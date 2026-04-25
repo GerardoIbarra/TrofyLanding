@@ -4,6 +4,7 @@
     
     <main>
       <HeroSection />
+      <HyperframeDemo />
       <ProcessSection />
       <FeaturesSection />
       <TestimonialsSection />
