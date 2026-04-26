@@ -7,7 +7,7 @@
       <div class="hero-content animate-fade-in">
         <div class="badge">Next Gen Tournament App</div>
         <h1>Elevate Your <br/><span class="text-gradient">Tournament Experience</span></h1>
-        <p class="hero-sub">Trofy brings professional-grade tournament management to your pocket. Live scoring, real-time standings, and seamless league organization for any sport.</p>
+        <p class="hero-sub">Trofi brings professional-grade tournament management to your pocket. Live scoring, real-time standings, and seamless league organization for any sport.</p>
         
         <div class="hero-actions">
           <button class="btn btn-primary">Start Organizing Free</button>
@@ -31,7 +31,7 @@
 
       <div class="hero-visual animate-fade-in" style="animation-delay: 0.2s">
         <div class="mockup-container">
-          <img src="/hero-mockup.png" alt="Trofy App Mockup" class="hero-image" />
+          <img src="/hero-mockup.png" alt="Trofi App Mockup" class="hero-image" />
           <div class="mockup-glow"></div>
         </div>
       </div>

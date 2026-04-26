@@ -1,6 +1,6 @@
-# 🏆 Trofy Landing Page
+# 🏆 Trofi Landing Page
 
-A premium, dark-themed landing page for **Trofy** built with **Nuxt 4**.
+A premium, dark-themed landing page for **Trofi** built with **Nuxt 4**.
 
 ## ✨ Features
 - **Modern Design**: Inspired by Laurel/Cruip aesthetics.

@@ -3,7 +3,7 @@
     <div class="container nav-content">
       <div class="logo">
         <AppLogo :width="40" :height="40" color="var(--primary-color)" />
-        <span class="logo-text">TROFY</span>
+        <span class="logo-text">TROFI</span>
       </div>
       
       <div class="nav-links">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trofy Product Demo</title>
+  <title>Trofi Product Demo</title>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap');
@@ -19,7 +19,7 @@
       height: 1080px;
     }
 
-    [data-composition-id="trofy-demo"] {
+    [data-composition-id="trofi-demo"] {
       width: 1920px;
       height: 1080px;
       position: relative;
@@ -106,12 +106,12 @@
   </style>
 </head>
 <body>
-  <div data-composition-id="trofy-demo" data-width="1920" data-height="1080" data-duration="17">
+  <div data-composition-id="trofi-demo" data-width="1920" data-height="1080" data-duration="17">
     
     <!-- Scene 1: Welcome (0-4s) -->
     <div id="scene1" class="scene" data-start="0" data-duration="4" data-track-index="1">
       <div id="s1-logo">🏆</div>
-      <h1 id="s1-title">TROFY</h1>
+      <h1 id="s1-title">TROFI</h1>
       <p style="font-size: 40px; color: #94a3b8; margin-top: 20px;">Manage like a Pro.</p>
     </div>
 
@@ -138,7 +138,7 @@
     <!-- Scene 4: CTA (13-17s) -->
     <div id="scene4" class="scene" data-start="13" data-duration="4" data-track-index="1">
       <h1 id="s4-title">Ready to Kickoff?</h1>
-      <div class="btn-mockup">JOIN TROFY NOW</div>
+      <div class="btn-mockup">JOIN TROFI NOW</div>
     </div>
 
     <script>
@@ -170,7 +170,7 @@
       tl.from(".btn-mockup", { y: 50, opacity: 0, duration: 0.6, ease: "power2.out" }, 13.5);
       tl.to(".btn-mockup", { scale: 1.1, repeat: 2, yoyo: true, duration: 0.4 }, 14.5);
 
-      window.__timelines["trofy-demo"] = tl;
+      window.__timelines["trofi-demo"] = tl;
     </script>
   </div>
 </body>

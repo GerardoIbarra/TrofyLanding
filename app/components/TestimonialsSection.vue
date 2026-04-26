@@ -3,7 +3,7 @@
     <div class="container">
       <div class="section-header text-center">
         <h2 class="animate-on-scroll">Trusted by <span class="text-gradient">Champions</span></h2>
-        <p class="section-sub">Hear from the organizers and players who have transformed their tournaments with Trofy.</p>
+        <p class="section-sub">Hear from the organizers and players who have transformed their tournaments with Trofi.</p>
       </div>
 
       <AnimatedTestimonials :testimonials="testimonials" :autoplay="true" />
@@ -14,7 +14,7 @@
 <script setup>
 const testimonials = [
   {
-    quote: "Trofy cut our administrative work by 70%. Generating the season schedule used to take days, now it takes seconds.",
+    quote: "Trofi cut our administrative work by 70%. Generating the season schedule used to take days, now it takes seconds.",
     name: "Alex Rivera",
     designation: "Director @ Liga Premier CDMX",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=3000&auto=format&fit=crop",

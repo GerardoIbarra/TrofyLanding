@@ -1,4 +1,4 @@
-# Trofy Video Design Identity
+# Trofi Video Design Identity
 
 ## Style Prompt
 Midnight Sleek: A high-contrast, dark, and technical aesthetic. Focus on deep blacks, vibrant cian glows, and smooth, purposeful motion. The feeling should be "Elite Sports Management Tool".

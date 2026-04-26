@@ -38,12 +38,12 @@ const faqs = [
     a: 'We support soccer, basketball, volleyball, tennis, and any sport that uses round-robin, knockout, or league formats. You can even create custom scoring rules.'
   },
   {
-    q: 'Can I use Trofy for free?',
+    q: 'Can I use Trofi for free?',
     a: 'Yes! Our Starter plan is free forever for leagues with up to 8 teams. It includes all the essential tools to run a professional-feeling tournament.'
   },
   {
     q: 'How do players see their stats?',
-    a: 'Every league has a public URL that you can share. Players can also download the Trofy mobile app to get notifications and follow their favorite teams.'
+    a: 'Every league has a public URL that you can share. Players can also download the Trofi mobile app to get notifications and follow their favorite teams.'
   },
   {
     q: 'Can I export my data?',

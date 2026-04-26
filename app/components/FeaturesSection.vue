@@ -3,7 +3,7 @@
     <div class="container">
       <div class="section-header text-center">
         <h2 class="animate-on-scroll">Everything you need to <br/><span class="text-gradient">manage like a pro</span></h2>
-        <p class="section-sub">Stop using spreadsheets. Start using Trofy to handle the complexity of sports logistics.</p>
+        <p class="section-sub">Stop using spreadsheets. Start using Trofi to handle the complexity of sports logistics.</p>
       </div>
 
       <div class="features-grid">

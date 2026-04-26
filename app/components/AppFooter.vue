@@ -4,7 +4,7 @@
       <div class="footer-brand">
         <div class="logo">
           <AppLogo :width="36" :height="36" color="var(--primary-color)" />
-          <span class="logo-text">TROFY</span>
+          <span class="logo-text">TROFI</span>
         </div>
         <p class="brand-desc">Building the future of competitive sports management. Based in Mexico, serving the world.</p>
         <div class="socials">
@@ -39,7 +39,7 @@
     </div>
     
     <div class="container footer-bottom">
-      <p>&copy; {{ new Date().getFullYear() }} Trofy Sports Tech. All rights reserved.</p>
+      <p>&copy; {{ new Date().getFullYear() }} Trofi Sports Tech. All rights reserved.</p>
       <div class="status">
         <span class="status-dot"></span>
         All systems operational

@@ -4,7 +4,7 @@
       <div class="cta-card glass animate-on-scroll">
         <div class="cta-content">
           <h2>Ready to host your <br/><span class="text-gradient">best tournament yet?</span></h2>
-          <p>Join thousands of organizers who trust Trofy to power their competitive communities.</p>
+          <p>Join thousands of organizers who trust Trofi to power their competitive communities.</p>
           <div class="cta-buttons">
             <button class="btn btn-primary">Get Started Now</button>
             <button class="btn btn-outline">Contact Sales</button>
