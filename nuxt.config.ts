@@ -9,7 +9,9 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@vercel/analytics/nuxt',
+    '@vercel/speed-insights/nuxt'
   ],
   i18n: {
     locales: [
