@@ -3,11 +3,11 @@
     <div class="container">
       <div class="cta-card glass animate-on-scroll">
         <div class="cta-content">
-          <h2>Ready to host your <br/><span class="text-gradient">best tournament yet?</span></h2>
-          <p>Join thousands of organizers who trust Trofi to power their competitive communities.</p>
+          <h2>{{ $t('cta.title') }} <br/><span class="text-gradient">{{ $t('cta.titleGradient') }}</span></h2>
+          <p>{{ $t('cta.subtitle') }}</p>
           <div class="cta-buttons">
-            <button class="btn btn-primary">Get Started Now</button>
-            <button class="btn btn-outline">Contact Sales</button>
+            <button class="btn btn-primary">{{ $t('cta.primary') }}</button>
+            <button class="btn btn-outline">{{ $t('cta.secondary') }}</button>
           </div>
         </div>
         <div class="cta-decoration">

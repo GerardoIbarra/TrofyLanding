@@ -5,14 +5,14 @@
     
     <div class="container hero-grid">
       <div class="hero-content animate-fade-in">
-        <div class="badge">Next Gen Tournament App</div>
-        <h1>Elevate Your <br/><span class="text-gradient">Tournament Experience</span></h1>
-        <p class="hero-sub">Trofi brings professional-grade tournament management to your pocket. Live scoring, real-time standings, and seamless league organization for any sport.</p>
+        <div class="badge">{{ $t('hero.badge') }}</div>
+        <h1>{{ $t('hero.title') }} <br/><span class="text-gradient">{{ $t('hero.titleGradient') }}</span></h1>
+        <p class="hero-sub">{{ $t('hero.subtitle') }}</p>
         
         <div class="hero-actions">
-          <button class="btn btn-primary">Start Organizing Free</button>
+          <button class="btn btn-primary">{{ $t('hero.ctaPrimary') }}</button>
           <button class="btn btn-outline">
-            <Play :size="16" fill="currentColor" style="margin-right: 8px" /> Watch Demo
+            <Play :size="16" fill="currentColor" style="margin-right: 8px" /> {{ $t('hero.ctaSecondary') }}
           </button>
         </div>
 
@@ -30,8 +30,13 @@
       </div>
 
       <div class="hero-visual animate-fade-in" style="animation-delay: 0.2s">
-        <div class="mockup-container">
-          <img src="/hero-mockup.png" alt="Trofi App Mockup" class="hero-image" />
+        <div class="mockup-container video-mockup">
+          <iframe 
+            :src="`/trofi-video.html?lang=${locale}`" 
+            frameborder="0" 
+            class="hero-video-frame"
+            allow="autoplay"
+          ></iframe>
           <div class="mockup-glow"></div>
         </div>
       </div>
@@ -41,6 +46,9 @@
 
 <script setup>
 import { Play } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
 </script>
 
 <style scoped>
@@ -74,9 +82,16 @@ import { Play } from 'lucide-vue-next'
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 80px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -95,16 +110,16 @@ import { Play } from 'lucide-vue-next'
 }
 
 h1 {
-  font-size: clamp(40px, 5vw, 72px);
+  font-size: clamp(40px, 8vw, 84px);
   line-height: 1.1;
   margin-bottom: 24px;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 .hero-sub {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text-secondary);
-  max-width: 540px;
+  max-width: 700px;
   margin-bottom: 40px;
 }
 
@@ -117,7 +132,7 @@ h1 {
 .hero-stats {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 .stat {
@@ -126,10 +141,9 @@ h1 {
 }
 
 .stat-num {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-primary);
-  font-family: 'Outfit', sans-serif;
 }
 
 .stat-label {
@@ -139,23 +153,30 @@ h1 {
 
 .stat-divider {
   width: 1px;
-  height: 30px;
+  height: 40px;
   background: var(--border-color);
+}
+
+.hero-visual {
+  width: 100%;
+  max-width: 1100px;
 }
 
 .mockup-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  aspect-ratio: 16/9;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #000;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
 }
 
-.hero-image {
+.hero-video-frame {
   width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  height: 100%;
+  border: none;
 }
 
 .mockup-glow {
@@ -163,32 +184,25 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 110%;
-  height: 110%;
+  width: 140%;
+  height: 140%;
   background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 
-@media (max-width: 992px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 80px;
-  }
-  
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+@media (max-width: 768px) {
   .hero-actions {
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
   }
   
+  .hero-actions .btn {
+    width: 100%;
+  }
+
   .hero-stats {
-    justify-content: center;
+    gap: 20px;
   }
 }
 </style>

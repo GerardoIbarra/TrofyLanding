@@ -2,8 +2,8 @@
   <section id="pricing" class="pricing">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="animate-on-scroll">Simple, <span class="text-gradient">transparent pricing</span></h2>
-        <p class="section-sub">Choose the plan that fits your league size. No hidden fees.</p>
+        <h2 class="animate-on-scroll">{{ $t('pricing.title') }} <span class="text-gradient">{{ $t('pricing.titleGradient') }}</span></h2>
+        <p class="section-sub">{{ $t('pricing.subtitle') || 'Choose the plan that fits your league size.' }}</p>
       </div>
 
       <div class="pricing-grid" @mouseleave="activeIndex = 1">
@@ -15,26 +15,26 @@
           :style="`animation-delay: ${i * 0.1}s`"
           @mouseenter="activeIndex = i"
         >
-          <div v-if="i === 1" class="popular-badge">Most Popular</div>
+          <div v-if="i === 1" class="popular-badge">{{ $t('pricing.popular') || 'Most Popular' }}</div>
           <div class="plan-header">
-            <h3>{{ plan.name }}</h3>
+            <h3>{{ $t(plan.nameKey) }}</h3>
             <div class="price">
               <span class="currency">$</span>
-              <span class="amount">{{ plan.price }}</span>
-              <span class="period">/mo</span>
+              <span class="amount">{{ $t(plan.priceKey) }}</span>
+              <span class="period">/{{ $t(plan.periodKey) }}</span>
             </div>
-            <p class="plan-desc">{{ plan.desc }}</p>
+            <p class="plan-desc">{{ $t(plan.descKey) }}</p>
           </div>
 
           <ul class="features-list">
-            <li v-for="feat in plan.features" :key="feat">
+            <li v-for="feat in tm(plan.featuresKey)" :key="feat">
               <Check :size="18" color="var(--primary-color)" />
               {{ feat }}
             </li>
           </ul>
 
           <button class="btn" :class="activeIndex === i ? 'btn-primary' : 'btn-outline'">
-            {{ plan.cta }}
+            {{ $t(plan.ctaKey) }}
           </button>
         </div>
       </div>
@@ -45,48 +45,37 @@
 <script setup>
 import { ref } from 'vue'
 import { Check } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
 
+const { tm } = useI18n()
 const activeIndex = ref(1) // Pro is active by default
 
 const plans = [
   {
-    name: 'Starter',
-    price: '0',
-    desc: 'Perfect for small friendly tournaments.',
-    features: [
-      'Up to 8 teams',
-      'Basic standings',
-      'Digital match sheets',
-      'Public league page'
-    ],
-    cta: 'Start Free',
+    nameKey: 'pricing.free.name',
+    priceKey: 'pricing.free.price',
+    periodKey: 'pricing.free.period',
+    descKey: 'pricing.free.desc',
+    featuresKey: 'pricing.free.features',
+    ctaKey: 'pricing.free.cta',
     featured: false
   },
   {
-    name: 'Pro',
-    price: '29',
-    desc: 'The best tools for professional organizers.',
-    features: [
-      'Unlimited teams',
-      'Advanced statistics',
-      'Payment collection',
-      'Custom branding',
-      'Priority support'
-    ],
-    cta: 'Get Started Pro',
+    nameKey: 'pricing.pro.name',
+    priceKey: 'pricing.pro.price',
+    periodKey: 'pricing.pro.period',
+    descKey: 'pricing.pro.desc',
+    featuresKey: 'pricing.pro.features',
+    ctaKey: 'pricing.pro.cta',
     featured: false
   },
   {
-    name: 'Enterprise',
-    price: '99',
-    desc: 'For large multi-city organizations.',
-    features: [
-      'Multiple admin roles',
-      'API access',
-      'White-label mobile app',
-      'Dedicated manager'
-    ],
-    cta: 'Contact Sales',
+    nameKey: 'pricing.enterprise.name',
+    priceKey: 'pricing.enterprise.price',
+    periodKey: 'pricing.enterprise.period',
+    descKey: 'pricing.enterprise.desc',
+    featuresKey: 'pricing.enterprise.features',
+    ctaKey: 'pricing.enterprise.cta',
     featured: false
   }
 ]

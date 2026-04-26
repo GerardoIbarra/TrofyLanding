@@ -6,7 +6,7 @@
           <AppLogo :width="36" :height="36" color="var(--primary-color)" />
           <span class="logo-text">TROFI</span>
         </div>
-        <p class="brand-desc">Building the future of competitive sports management. Based in Mexico, serving the world.</p>
+        <p class="brand-desc">{{ $t('footer.desc') }}</p>
         <div class="socials">
           <a href="#" class="social-link"><Twitter :size="20" /></a>
           <a href="#" class="social-link"><Instagram :size="20" /></a>
@@ -15,10 +15,10 @@
       </div>
       
       <div class="footer-links">
-        <h4>Product</h4>
-        <a href="#">Features</a>
+        <h4>{{ $t('footer.links.product') }}</h4>
+        <a href="#features">{{ $t('nav.features') }}</a>
         <a href="#">Roadmap</a>
-        <a href="#">Pricing</a>
+        <a href="#pricing">{{ $t('nav.pricing') }}</a>
         <a href="#">App Store</a>
       </div>
 
@@ -31,7 +31,7 @@
       </div>
 
       <div class="footer-links">
-        <h4>Legal</h4>
+        <h4>{{ $t('footer.links.legal') }}</h4>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
         <a href="#">Cookie Policy</a>
@@ -39,10 +39,10 @@
     </div>
     
     <div class="container footer-bottom">
-      <p>&copy; {{ new Date().getFullYear() }} Trofi Sports Tech. All rights reserved.</p>
+      <p>&copy; {{ new Date().getFullYear() }} Trofi Sports Tech. {{ $t('footer.copyright') }}</p>
       <div class="status">
         <span class="status-dot"></span>
-        All systems operational
+        {{ $t('footer.status') }}
       </div>
     </div>
   </footer>

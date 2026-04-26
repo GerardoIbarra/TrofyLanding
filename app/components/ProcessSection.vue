@@ -2,7 +2,7 @@
   <section id="how-it-works" class="process">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="animate-on-scroll">From kickoff to final <br/><span class="text-gradient">in three easy steps</span></h2>
+        <h2 class="animate-on-scroll">{{ $t('process.title') }} <br/><span class="text-gradient">{{ $t('process.titleGradient') }}</span></h2>
       </div>
 
       <div class="process-grid">
@@ -11,8 +11,8 @@
           <div class="step-icon">
             <component :is="step.icon" :size="40" color="var(--primary-color)" />
           </div>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.desc }}</p>
+          <h3>{{ $t(step.titleKey) }}</h3>
+          <p>{{ $t(step.descKey) }}</p>
         </div>
       </div>
     </div>
@@ -25,18 +25,18 @@ import { PlusCircle, UserPlus, Trophy } from 'lucide-vue-next'
 const steps = [
   {
     icon: PlusCircle,
-    title: 'Create Your League',
-    desc: 'Set your rules, select your format, and define your schedule in under 2 minutes.'
+    titleKey: 'process.steps.create.title',
+    descKey: 'process.steps.create.desc'
   },
   {
     icon: UserPlus,
-    title: 'Invite Teams',
-    desc: 'Share a unique link with captains. They register their players and pay fees digitally.'
+    titleKey: 'process.steps.invite.title',
+    descKey: 'process.steps.invite.desc'
   },
   {
     icon: Trophy,
-    title: 'Play & Track',
-    desc: 'Update scores live. The table, stats, and brackets update automatically for everyone.'
+    titleKey: 'process.steps.play.title',
+    descKey: 'process.steps.play.desc'
   }
 ]
 </script>

@@ -119,37 +119,75 @@
     <!-- Scene 1: Welcome (0-4s) -->
     <div id="scene1" class="scene" data-start="0" data-duration="4" data-track-index="1">
       <div id="s1-logo">🏆</div>
-      <h1 id="s1-title">TROFI</h1>
-      <p style="font-size: 40px; color: #94a3b8; margin-top: 20px;">Manage like a Pro.</p>
+      <h1 id="s1-title" class="translatable">TROFI</h1>
+      <p id="s1-sub" class="translatable" style="font-size: 40px; color: #94a3b8; margin-top: 20px;">Manage like a Pro.</p>
     </div>
 
     <!-- Scene 2: Problem (4-8s) -->
     <div id="scene2" class="scene" data-start="4" data-duration="4" data-track-index="1">
       <div class="grid-bg"></div>
-      <h2 id="s2-heading">Still using spreadsheets?</h2>
+      <h2 id="s2-heading" class="translatable">Still using spreadsheets?</h2>
       <div class="spreadsheet-box">
-        [Error: Collision at Match 42]<br/>
-        [Warning: Duplicate Player ID]<br/>
-        [Loading... 89%]
+        <span class="translatable" id="s2-err1">[Error: Collision at Match 42]</span><br/>
+        <span class="translatable" id="s2-err2">[Warning: Duplicate Player ID]</span><br/>
+        <span class="translatable" id="s2-err3">[Loading... 89%]</span>
       </div>
       <div id="s2-cross" style="position: absolute; font-size: 500px; color: #EF4444; opacity: 0;">✕</div>
     </div>
 
     <!-- Scene 3: Solution (8-13s) -->
     <div id="scene3" class="scene" data-start="8" data-duration="5" data-track-index="1">
-      <h2 id="s3-heading">Step into the <span class="text-gradient">Future</span></h2>
-      <div class="dashboard-preview">
+      <h2 id="s3-heading" class="translatable">Step into the <span class="text-gradient">Future</span></h2>
+      <div class="dashboard-preview translatable" id="s3-preview">
         LIVE STANDINGS UPDATED
       </div>
     </div>
 
     <!-- Scene 4: CTA (13-17s) -->
     <div id="scene4" class="scene" data-start="13" data-duration="4" data-track-index="1">
-      <h1 id="s4-title">Ready to Kickoff?</h1>
-      <div class="btn-mockup">JOIN TROFI NOW</div>
+      <h1 id="s4-title" class="translatable">Ready to Kickoff?</h1>
+      <div class="btn-mockup translatable" id="s4-btn">JOIN TROFI NOW</div>
     </div>
 
     <script>
+      const translations = {
+        en: {
+          "s1-title": "TROFI",
+          "s1-sub": "Manage like a Pro.",
+          "s2-heading": "Still using spreadsheets?",
+          "s2-err1": "[Error: Collision at Match 42]",
+          "s2-err2": "[Warning: Duplicate Player ID]",
+          "s2-err3": "[Loading... 89%]",
+          "s3-heading": 'Step into the <span class="text-gradient">Future</span>',
+          "s3-preview": "LIVE STANDINGS UPDATED",
+          "s4-title": "Ready to Kickoff?",
+          "s4-btn": "JOIN TROFI NOW"
+        },
+        es: {
+          "s1-title": "TROFI",
+          "s1-sub": "Gestiona como un Pro.",
+          "s2-heading": "¿Sigues usando Excel?",
+          "s2-err1": "[Error: Colisión en Partido 42]",
+          "s2-err2": "[Aviso: Jugador Duplicado]",
+          "s2-err3": "[Cargando... 89%]",
+          "s3-heading": 'Entra en el <span class="text-gradient">Futuro</span>',
+          "s3-preview": "TABLA DE POSICIONES ACTUALIZADA",
+          "s4-title": "¿Listo para el silbatazo?",
+          "s4-btn": "ÚNETE A TROFI"
+        }
+      };
+
+      // Get language from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const lang = urlParams.get('lang') || 'en';
+      const t = translations[lang] || translations.en;
+
+      // Apply translations
+      Object.keys(t).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = t[id];
+      });
+
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: false, repeat: -1 });
 

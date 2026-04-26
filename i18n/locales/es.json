@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "features": "Funcionalidades",
+    "process": "Cómo Funciona",
+    "pricing": "Precios",
+    "faq": "FAQ",
+    "login": "Iniciar Sesión",
+    "getStarted": "Comenzar"
+  },
+  "hero": {
+    "badge": "App de Torneos de Nueva Generación",
+    "title": "Eleva tu",
+    "titleGradient": "Experiencia de Torneo",
+    "subtitle": "Trofi lleva la gestión de torneos de nivel profesional a tu bolsillo. Marcadores en vivo, posiciones en tiempo real y organización impecable para cualquier deporte.",
+    "ctaPrimary": "Empieza a Organizar Gratis",
+    "ctaSecondary": "Ver Demo",
+    "mockupAlt": "Mockup de la App Trofi"
+  },
+  "features": {
+    "title": "Todo lo que necesitas para",
+    "titleGradient": "gestionar como un pro",
+    "subtitle": "Deja de usar hojas de cálculo. Empieza a usar Trofi para manejar la complejidad de la logística deportiva.",
+    "realtime": {
+      "title": "Marcadores en Tiempo Real",
+      "desc": "Actualiza los marcadores al instante desde el campo. Jugadores y fans reciben notificaciones push al momento."
+    },
+    "scheduling": {
+      "title": "Programación Inteligente",
+      "desc": "Genera automáticamente calendarios justos. Nuestro algoritmo maneja la disponibilidad de sedes y días de descanso."
+    },
+    "standings": {
+      "title": "Tablas Dinámicas",
+      "desc": "Las tablas se actualizan automáticamente con cada resultado. Las reglas de desempate se aplican al instante."
+    }
+  },
+  "process": {
+    "title": "Lanza tu liga en",
+    "titleGradient": "minutos",
+    "steps": {
+      "create": {
+        "title": "Crea la Liga",
+        "desc": "Configura tu deporte, reglas y formato de temporada en segundos."
+      },
+      "invite": {
+        "title": "Invita Equipos",
+        "desc": "Comparte un enlace. Los equipos se registran y gestionan sus propias plantillas."
+      },
+      "play": {
+        "title": "Juega y Rastrea",
+        "desc": "Registra resultados sobre la marcha. Trofi se encarga de todos los cálculos."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Confiado por",
+    "titleGradient": "Campeones",
+    "subtitle": "Escucha a los organizadores y jugadores que han transformado sus torneos con Trofi.",
+    "quotes": {
+      "alex": "Trofi redujo nuestro trabajo administrativo en un 70%. Generar el calendario de la temporada solía tomar días, ahora toma segundos.",
+      "sarah": "La función de posiciones en vivo cambia las reglas del juego. A los jugadores les encanta ver sus estadísticas actualizarse al instante.",
+      "marco": "Profesionalismo en su máxima expresión. Las hojas de partido digitales hicieron que nuestra liga se viera 10 veces más organizada.",
+      "luis": "La mejor inversión para nuestra academia. Gestionar más de 50 equipos en múltiples grupos de edad finalmente es manejable."
+    }
+  },
+  "pricing": {
+    "title": "Precios simples y",
+    "titleGradient": "transparentes",
+    "free": {
+      "name": "Starter",
+      "price": "$0",
+      "period": "siempre",
+      "desc": "Perfecto para pequeñas ligas locales.",
+      "cta": "Comenzar",
+      "features": ["Hasta 8 equipos", "Programación básica", "Marcadores en vivo", "URL pública de la liga"]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "29",
+      "period": "por mes",
+      "desc": "Las mejores herramientas para organizadores profesionales.",
+      "cta": "Probar Pro Gratis",
+      "features": ["Equipos ilimitados", "Estadísticas avanzadas", "Cobro de cuotas", "Marca personalizada", "Soporte prioritario"]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "99",
+      "period": "por mes",
+      "desc": "Para grandes organizaciones multiciudad.",
+      "cta": "Contactar Ventas",
+      "features": ["Múltiples roles de admin", "Acceso a API", "App móvil marca blanca", "Gerente dedicado"]
+    }
+  },
+  "faq": {
+    "title": "Preguntas",
+    "titleGradient": "Frecuentes",
+    "questions": {
+      "sports": {
+        "q": "¿Qué deportes están soportados?",
+        "a": "Soportamos fútbol, baloncesto, voleibol, tenis y cualquier deporte que use formatos de round-robin, eliminación directa o liga. Incluso puedes crear reglas de puntuación personalizadas."
+      },
+      "free": {
+        "q": "¿Puedo usar Trofi gratis?",
+        "a": "¡Sí! Nuestro plan Starter es gratis para siempre para ligas de hasta 8 equipos. Incluye todas las herramientas esenciales para organizar un torneo profesional."
+      },
+      "share": {
+        "q": "¿Cómo ven los jugadores los resultados?",
+        "a": "Cada liga tiene una URL pública que puedes compartir. Los jugadores también pueden descargar la app móvil de Trofi para recibir notificaciones y seguir a sus equipos favoritos."
+      },
+      "export": {
+        "q": "¿Puedo exportar mis datos?",
+        "a": "Absolutamente. Los usuarios Pro y Enterprise pueden exportar resultados, posiciones y datos de jugadores a CSV o Excel en cualquier momento."
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para organizar tu",
+    "titleGradient": "mejor torneo?",
+    "subtitle": "Únete a miles de organizadores que confían en Trofi para potenciar sus comunidades competitivas.",
+    "primary": "Comenzar Ahora",
+    "secondary": "Contactar Ventas"
+  },
+  "footer": {
+    "desc": "Construyendo el futuro de la gestión deportiva competitiva. Con sede en México, sirviendo al mundo.",
+    "links": {
+      "product": "Producto",
+      "company": "Compañía",
+      "legal": "Legal"
+    },
+    "copyright": "Todos los derechos reservados.",
+    "status": "Todos los sistemas operativos"
+  }
+}

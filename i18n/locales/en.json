@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "features": "Features",
+    "process": "How it Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "login": "Login",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Next Gen Tournament App",
+    "title": "Elevate Your",
+    "titleGradient": "Tournament Experience",
+    "subtitle": "Trofi brings professional-grade tournament management to your pocket. Live scoring, real-time standings, and seamless league organization for any sport.",
+    "ctaPrimary": "Start Organizing Free",
+    "ctaSecondary": "Watch Demo",
+    "mockupAlt": "Trofi App Mockup"
+  },
+  "features": {
+    "title": "Everything you need to",
+    "titleGradient": "manage like a pro",
+    "subtitle": "Stop using spreadsheets. Start using Trofi to handle the complexity of sports logistics.",
+    "realtime": {
+      "title": "Real-time Scoring",
+      "desc": "Update scores instantly from the field. Players and fans get push notifications as goals happen."
+    },
+    "scheduling": {
+      "title": "Smart Scheduling",
+      "desc": "Auto-generate fair round-robins or knockouts. Our algorithm handles venue availability and rest days."
+    },
+    "standings": {
+      "title": "Dynamic Standings",
+      "desc": "Tables update automatically with every result. Tie-breaking rules are applied instantly."
+    }
+  },
+  "process": {
+    "title": "Launch your league in",
+    "titleGradient": "minutes",
+    "steps": {
+      "create": {
+        "title": "Create League",
+        "desc": "Set your sport, rules, and season format in seconds."
+      },
+      "invite": {
+        "title": "Invite Teams",
+        "desc": "Share a join link. Teams register and manage their own rosters."
+      },
+      "play": {
+        "title": "Play & Track",
+        "desc": "Record results on the go. Trofi handles all the math."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Trusted by",
+    "titleGradient": "Champions",
+    "subtitle": "Hear from the organizers and players who have transformed their tournaments with Trofi.",
+    "quotes": {
+      "alex": "Trofi cut our administrative work by 70%. Generating the season schedule used to take days, now it takes seconds.",
+      "sarah": "The live standings feature is a game changer. Players love seeing their stats update instantly after every match.",
+      "marco": "Professionalism at its peak. The digital match sheets made our league look 10x more organized to sponsors.",
+      "luis": "Best investment for our academy. Managing 50+ teams across multiple age groups is finally manageable."
+    }
+  },
+  "pricing": {
+    "title": "Simple, transparent",
+    "titleGradient": "pricing",
+    "free": {
+      "name": "Starter",
+      "price": "$0",
+      "period": "forever",
+      "desc": "Perfect for small local leagues.",
+      "cta": "Get Started",
+      "features": ["Up to 8 teams", "Basic scheduling", "Live scoring", "Public league URL"]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "29",
+      "period": "per month",
+      "desc": "The best tools for professional organizers.",
+      "cta": "Start Pro Trial",
+      "features": ["Unlimited teams", "Advanced statistics", "Payment collection", "Custom branding", "Priority support"]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "99",
+      "period": "per month",
+      "desc": "For large multi-city organizations.",
+      "cta": "Contact Sales",
+      "features": ["Multiple admin roles", "API access", "White-label mobile app", "Dedicated manager"]
+    }
+  },
+  "faq": {
+    "title": "Common",
+    "titleGradient": "Questions",
+    "questions": {
+      "sports": {
+        "q": "What sports are supported?",
+        "a": "We support soccer, basketball, volleyball, tennis, and any sport that uses round-robin, knockout, or league formats. You can even create custom scoring rules."
+      },
+      "free": {
+        "q": "Can I use Trofi for free?",
+        "a": "Yes! Our Starter plan is free forever for leagues with up to 8 teams. It includes all the essential tools to run a professional-feeling tournament."
+      },
+      "share": {
+        "q": "How do players see the results?",
+        "a": "Every league has a public URL that you can share. Players can also download the Trofi mobile app to get notifications and follow their favorite teams."
+      },
+      "export": {
+        "q": "Can I export my data?",
+        "a": "Absolutely. Pro and Enterprise users can export match results, standings, and player data to CSV or Excel at any time."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to host your",
+    "titleGradient": "best tournament yet?",
+    "subtitle": "Join thousands of organizers who trust Trofi to power their competitive communities.",
+    "primary": "Get Started Now",
+    "secondary": "Contact Sales"
+  },
+  "footer": {
+    "desc": "Building the future of competitive sports management. Based in Mexico, serving the world.",
+    "links": {
+      "product": "Product",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "copyright": "All rights reserved.",
+    "status": "All systems operational"
+  }
+}

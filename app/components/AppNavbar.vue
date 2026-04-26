@@ -7,15 +7,17 @@
       </div>
       
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#features">{{ $t('nav.features') }}</a>
+        <a href="#how-it-works">{{ $t('nav.process') }}</a>
+        <a href="#pricing">{{ $t('nav.pricing') }}</a>
       </div>
-<!-- 
+      
       <div class="nav-actions">
-        <button class="btn btn-outline">Log In</button>
-        <button class="btn btn-primary">Join Now</button>
-      </div> -->
+        <button class="flag-toggle" @click="toggleLocale">
+          <span class="flag-icon">{{ currentLocale === 'en' ? '🇲🇽' : '🇺🇸' }}</span>
+          <span class="lang-code">{{ currentLocale === 'en' ? 'ES' : 'EN' }}</span>
+        </button>
+      </div>
 
       <button class="mobile-menu-btn" @click="isMenuOpen = !isMenuOpen">
         <Menu v-if="!isMenuOpen" :size="24" color="white" />
@@ -25,20 +27,33 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" :class="{ 'open': isMenuOpen }">
-      <a href="#features" @click="isMenuOpen = false">Features</a>
-      <a href="#how-it-works" @click="isMenuOpen = false">How it works</a>
-      <a href="#pricing" @click="isMenuOpen = false">Pricing</a>
-      <!-- <div class="mobile-actions">
-        <button class="btn btn-outline">Log In</button>
-        <button class="btn btn-primary">Join Now</button>
-      </div> -->
+      <a href="#features" @click="isMenuOpen = false">{{ $t('nav.features') }}</a>
+      <a href="#how-it-works" @click="isMenuOpen = false">{{ $t('nav.process') }}</a>
+      <a href="#pricing" @click="isMenuOpen = false">{{ $t('nav.pricing') }}</a>
+      
+      <div class="mobile-lang-switcher">
+        <button class="flag-toggle large" @click="toggleLocale; isMenuOpen = false">
+          <span class="flag-icon">{{ currentLocale === 'en' ? '🇲🇽' : '🇺🇸' }}</span>
+          <span>{{ currentLocale === 'en' ? 'Español' : 'English' }}</span>
+        </button>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
+
+const { locale: currentLocale, locales, setLocale } = useI18n()
+
+const availableLocales = computed(() => locales.value)
+
+const toggleLocale = () => {
+  const nextLocale = currentLocale.value === 'en' ? 'es' : 'en'
+  setLocale(nextLocale)
+}
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
@@ -160,6 +175,48 @@ onUnmounted(() => {
 .mobile-menu.open {
   height: calc(100vh - var(--nav-height));
   padding: 40px 20px;
+}
+
+.flag-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flag-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.flag-icon {
+  font-size: 18px;
+}
+
+.lang-code {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.flag-toggle.large {
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 16px;
+}
+
+.mobile-lang-switcher {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {

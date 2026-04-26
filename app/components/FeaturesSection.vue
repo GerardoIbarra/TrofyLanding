@@ -2,8 +2,8 @@
   <section id="features" class="features">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="animate-on-scroll">Everything you need to <br/><span class="text-gradient">manage like a pro</span></h2>
-        <p class="section-sub">Stop using spreadsheets. Start using Trofi to handle the complexity of sports logistics.</p>
+        <h2 class="animate-on-scroll">{{ $t('features.title') }} <br/><span class="text-gradient">{{ $t('features.titleGradient') }}</span></h2>
+        <p class="section-sub">{{ $t('features.subtitle') }}</p>
       </div>
 
       <div class="features-grid">
@@ -11,8 +11,8 @@
           <div class="feature-icon">
             <component :is="feature.icon" :size="32" color="var(--primary-color)" />
           </div>
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.desc }}</p>
+          <h3>{{ $t(feature.titleKey) }}</h3>
+          <p>{{ $t(feature.descKey) }}</p>
         </div>
       </div>
     </div>
@@ -32,33 +32,33 @@ import AppLogo from './AppLogo.vue'
 const features = [
   {
     icon: BarChart3,
-    title: 'Live Standings',
-    desc: 'Automated table generation. Points, goal difference, and head-to-head records calculated instantly.'
+    titleKey: 'features.standings.title',
+    descKey: 'features.standings.desc'
   },
   {
     icon: Calendar,
-    title: 'Smart Scheduling',
-    desc: 'Generate fair fixtures in seconds. Handle venue conflicts and player availability effortlessly.'
+    titleKey: 'features.scheduling.title',
+    descKey: 'features.scheduling.desc'
   },
   {
     icon: Smartphone,
-    title: 'Mobile First',
-    desc: 'Update scores from the field. Players and fans get instant notifications on their devices.'
+    titleKey: 'features.realtime.title',
+    descKey: 'features.realtime.desc'
   },
   {
     icon: AppLogo,
-    title: 'Tournament Formats',
-    desc: 'Knockouts, Round Robins, Group Stages, or Custom Brackets. We support every competitive style.'
+    titleKey: 'process.steps.create.title',
+    descKey: 'process.steps.create.desc'
   },
   {
     icon: Users,
-    title: 'Member Management',
-    desc: 'Digital player passes, registration forms, and secure payment processing for league fees.'
+    titleKey: 'process.steps.invite.title',
+    descKey: 'process.steps.invite.desc'
   },
   {
     icon: LineChart,
-    title: 'Performance Analytics',
-    desc: 'Detailed stats for teams and players. Track top scorers, clean sheets, and MVP ratings.'
+    titleKey: 'process.steps.play.title',
+    descKey: 'process.steps.play.desc'
   }
 ]
 </script>

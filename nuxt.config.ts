@@ -5,7 +5,26 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxt/icon'],
+  modules: [
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n'
+  ],
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'es', name: 'Español', file: 'es.json' }
+    ],
+    defaultLocale: 'en',
+    langDir: 'locales',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: true
+    }
+  },
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [

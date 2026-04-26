@@ -2,18 +2,18 @@
   <section class="faq">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="animate-on-scroll">Frequently Asked <span class="text-gradient">Questions</span></h2>
+        <h2 class="animate-on-scroll">{{ $t('faq.title') }} <span class="text-gradient">{{ $t('faq.titleGradient') }}</span></h2>
       </div>
 
       <div class="faq-list">
         <div v-for="(item, i) in faqs" :key="i" class="faq-item animate-on-scroll" :class="{ 'active': activeIndex === i }">
           <button class="faq-question" @click="toggle(i)">
-            <span>{{ item.q }}</span>
+            <span>{{ $t(item.qKey) }}</span>
             <ChevronDown :class="{ 'rotate': activeIndex === i }" />
           </button>
           <div class="faq-answer">
             <div class="answer-content">
-              {{ item.a }}
+              {{ $t(item.aKey) }}
             </div>
           </div>
         </div>
@@ -34,20 +34,20 @@ const toggle = (i) => {
 
 const faqs = [
   {
-    q: 'How many sports do you support?',
-    a: 'We support soccer, basketball, volleyball, tennis, and any sport that uses round-robin, knockout, or league formats. You can even create custom scoring rules.'
+    qKey: 'faq.questions.sports.q',
+    aKey: 'faq.questions.sports.a'
   },
   {
-    q: 'Can I use Trofi for free?',
-    a: 'Yes! Our Starter plan is free forever for leagues with up to 8 teams. It includes all the essential tools to run a professional-feeling tournament.'
+    qKey: 'faq.questions.free.q',
+    aKey: 'faq.questions.free.a'
   },
   {
-    q: 'How do players see their stats?',
-    a: 'Every league has a public URL that you can share. Players can also download the Trofi mobile app to get notifications and follow their favorite teams.'
+    qKey: 'faq.questions.share.q',
+    aKey: 'faq.questions.share.a'
   },
   {
-    q: 'Can I export my data?',
-    a: 'Absolutely. Pro and Enterprise users can export match results, standings, and player data to CSV or Excel at any time.'
+    qKey: 'faq.questions.export.q',
+    aKey: 'faq.questions.export.a'
   }
 ]
 </script>
