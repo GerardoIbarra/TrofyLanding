@@ -53,7 +53,5 @@ const computedTestimonials = computeTestimonials;
   overflow: hidden;
 }
 
-.section-header {
-  margin-bottom: 40px;
-}
+
 </style>

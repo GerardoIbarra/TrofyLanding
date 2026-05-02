@@ -29,7 +29,7 @@
           <ul class="features-list">
             <li v-for="feat in tm(plan.featuresKey)" :key="feat">
               <Check :size="18" color="var(--primary-color)" />
-              {{ feat }}
+              {{ rt(feat) }}
             </li>
           </ul>
 
@@ -47,7 +47,7 @@ import { ref } from 'vue'
 import { Check } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 
-const { tm } = useI18n()
+const { tm, rt } = useI18n()
 const activeIndex = ref(1) // Pro is active by default
 
 const plans = [

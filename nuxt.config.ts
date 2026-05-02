@@ -14,12 +14,13 @@ export default defineNuxtConfig({
     '@vercel/speed-insights/nuxt'
   ],
   i18n: {
+    lazy: true,
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'es', name: 'Español', file: 'es.json' }
     ],
     defaultLocale: 'en',
-    langDir: 'locales',
+    langDir: '../locales',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: {
       useCookie: true,

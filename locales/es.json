@@ -65,9 +65,11 @@
   "pricing": {
     "title": "Precios simples y",
     "titleGradient": "transparentes",
+    "subtitle": "Elige el plan que mejor se adapte al tamaño de tu liga.",
+    "popular": "Más Popular",
     "free": {
       "name": "Starter",
-      "price": "$0",
+      "price": "0",
       "period": "siempre",
       "desc": "Perfecto para pequeñas ligas locales.",
       "cta": "Comenzar",

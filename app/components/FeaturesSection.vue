@@ -69,22 +69,7 @@ const features = [
   background: linear-gradient(to bottom, transparent, rgba(0, 245, 255, 0.02), transparent);
 }
 
-.section-header {
-  margin-bottom: 70px;
-  text-align: center;
-}
 
-h2 {
-  font-size: clamp(32px, 4vw, 48px);
-  margin-bottom: 20px;
-}
-
-.section-sub {
-  color: var(--text-secondary);
-  font-size: 18px;
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 .features-grid {
   display: grid;
