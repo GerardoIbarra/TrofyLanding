@@ -13,10 +13,18 @@
       </div>
       
       <div class="nav-actions">
-        <button class="flag-toggle" @click="toggleLocale">
-          <span class="flag-icon">{{ currentLocale === 'en' ? '🇲🇽' : '🇺🇸' }}</span>
-          <span class="lang-code">{{ currentLocale === 'en' ? 'ES' : 'EN' }}</span>
-        </button>
+        <div class="lang-switcher">
+          <button 
+            class="lang-btn"
+            :class="{ active: currentLocale === 'en' }"
+            @click="setLocale('en')"
+          >EN</button>
+          <button 
+            class="lang-btn"
+            :class="{ active: currentLocale === 'es' }"
+            @click="setLocale('es')"
+          >ES</button>
+        </div>
       </div>
 
       <button class="mobile-menu-btn" @click="isMenuOpen = !isMenuOpen">
@@ -32,10 +40,18 @@
       <a href="#pricing" @click="isMenuOpen = false">{{ $t('nav.pricing') }}</a>
       
       <div class="mobile-lang-switcher">
-        <button class="flag-toggle large" @click="toggleLocale; isMenuOpen = false">
-          <span class="flag-icon">{{ currentLocale === 'en' ? '🇲🇽' : '🇺🇸' }}</span>
-          <span>{{ currentLocale === 'en' ? 'Español' : 'English' }}</span>
-        </button>
+        <div class="lang-switcher large">
+          <button 
+            class="lang-btn"
+            :class="{ active: currentLocale === 'en' }"
+            @click="setLocale('en'); isMenuOpen = false"
+          >English</button>
+          <button 
+            class="lang-btn"
+            :class="{ active: currentLocale === 'es' }"
+            @click="setLocale('es'); isMenuOpen = false"
+          >Español</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -44,16 +60,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
-import { useI18n } from 'vue-i18n'
 
 const { locale: currentLocale, locales, setLocale } = useI18n()
 
 const availableLocales = computed(() => locales.value)
-
-const toggleLocale = () => {
-  const nextLocale = currentLocale.value === 'en' ? 'es' : 'en'
-  setLocale(nextLocale)
-}
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
@@ -177,40 +187,39 @@ onUnmounted(() => {
   padding: 40px 20px;
 }
 
-.flag-toggle {
+.lang-switcher {
   display: flex;
-  align-items: center;
-  gap: 8px;
   background: rgba(255, 255, 255, 0.05);
-  padding: 6px 12px;
+  padding: 4px;
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 600;
+}
+
+.lang-switcher button, .lang-switcher .lang-btn {
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.flag-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--primary-color);
-  transform: translateY(-1px);
+.lang-switcher button.active, .lang-switcher .lang-btn.active {
+  background: var(--text-primary);
+  color: var(--bg-color);
 }
 
-.flag-icon {
-  font-size: 18px;
-}
-
-.lang-code {
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-.flag-toggle.large {
-  padding: 12px 24px;
-  font-size: 18px;
-  border-radius: 16px;
+.lang-switcher.large button, .lang-switcher.large .lang-btn {
+  padding: 10px 24px;
+  font-size: 16px;
+  border-radius: 12px;
 }
 
 .mobile-lang-switcher {

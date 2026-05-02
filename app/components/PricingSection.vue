@@ -45,7 +45,6 @@
 <script setup>
 import { ref } from 'vue'
 import { Check } from 'lucide-vue-next'
-import { useI18n } from 'vue-i18n'
 
 const { tm, rt } = useI18n()
 const activeIndex = ref(1) // Pro is active by default
