@@ -13,6 +13,7 @@
     </main>
 
     <AppFooter />
+    <PwaUpdatePrompt />
   </div>
 </template>
 

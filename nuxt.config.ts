@@ -11,10 +11,45 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     '@vercel/analytics/nuxt',
-    '@vercel/speed-insights/nuxt'
+    '@vercel/speed-insights/nuxt',
+    '@vite-pwa/nuxt'
   ],
+  pwa: {
+    registerType: 'prompt',
+    manifest: {
+      name: 'Trofi - Ultimate Sports Tournament Management',
+      short_name: 'Trofi',
+      description: 'Organize, track, and manage sports leagues and tournaments with Trofi.',
+      theme_color: '#0a0a0a',
+      background_color: '#0a0a0a',
+      display: 'standalone',
+      orientation: 'portrait',
+      scope: '/',
+      start_url: '/',
+      icons: [
+        {
+          src: '/favicon.svg',
+          sizes: 'any',
+          type: 'image/svg+xml',
+          purpose: 'any'
+        },
+        {
+          src: '/trofy.svg',
+          sizes: 'any',
+          type: 'image/svg+xml',
+          purpose: 'maskable'
+        }
+      ]
+    },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}']
+    },
+    devOptions: {
+      enabled: true,
+      type: 'module'
+    }
+  },
   i18n: {
-    lazy: true,
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'es', name: 'Español', file: 'es.json' }
